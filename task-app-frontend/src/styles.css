@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Estilos globais */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #202124;
+}
+
+/* Estilos de cards */
+mat-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+  transition: box-shadow 0.3s ease-in-out !important;
+}
+
+mat-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+mat-card-header {
+  background: #1a73e8;
+  color: white;
+  padding: 24px !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+mat-card-title {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+mat-card-content {
+  padding: 24px !important;
+}
+
+/* Estilos de formulários */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0,0,0,0.12);
+}
+
+.mat-form-field-appearance-outline:hover .mat-form-field-outline {
+  color: rgba(0,0,0,0.24);
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline {
+  color: #1a73e8;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 1.2em 0 !important;
+}
+
+.mat-form-field-appearance-outline input.mat-input-element,
+.mat-form-field-appearance-outline textarea.mat-input-element {
+  padding: 12px 24px !important;
+}
+
+/* Estilos de botões */
+.mat-raised-button {
+  padding: 0 24px !important;
+  height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  border-radius: 24px !important;
+  text-transform: uppercase;
+  transition: all 0.3s ease !important;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #1a73e8 !important;
+}
+
+.mat-raised-button.mat-primary:hover {
+  background-color: #1557b0 !important;
+  box-shadow: 0 4px 8px rgba(26,115,232,0.4) !important;
+}
+
+.mat-button {
+  font-weight: 500 !important;
+  text-transform: uppercase;
+}
+
+/* Estilos de lista */
+mat-list {
+  padding: 8px 0 !important;
+}
+
+mat-list-item {
+  border-radius: 8px !important;
+  margin: 4px 8px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+mat-list-item:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Checkbox personalizado */
+.mat-checkbox-checked .mat-checkbox-background {
+  background-color: #1a73e8 !important;
+}
+
+/* Datepicker personalizado */
+.mat-calendar-body-selected {
+  background-color: #1a73e8 !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: #1a73e8 !important;
+}
+
+/* Timepicker personalizado */
+.timepicker__header {
+  background-color: #1a73e8 !important;
+}
+
+.clock-face__clock-hand {
+  background-color: #1a73e8 !important;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+mat-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  mat-card {
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  mat-card-header {
+    border-radius: 0 !important;
+  }
+
+  .mat-raised-button {
+    width: 100% !important;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a73e8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1557b0;
+}
+
+/* Estilo do backdrop do calendário */
+.cdk-overlay-container {
+  z-index: 1000;
+}
+
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+}
+
+/* Estilo do calendário */
+.mat-datepicker-content {
+  background-color: white !important;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 
+              0 4px 5px 0 rgba(0,0,0,.14), 
+              0 1px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+.mat-calendar {
+  background-color: white !important;
+}

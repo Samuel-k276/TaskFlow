@@ -1,0 +1,212 @@
+mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+mat-card-header {
+  background: #1a73e8;
+  color: white;
+  padding: 24px;
+  border-radius: 8px 8px 0 0;
+}
+
+mat-card-title {
+  margin: 0 !important;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+mat-card-content {
+  padding: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.datetime-container {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+  align-items: flex-start;
+}
+
+.date-field {
+  flex: 2;
+}
+
+.time-field {
+  flex: 1;
+}
+
+.time-field input {
+  cursor: pointer;
+}
+
+.time-field mat-icon {
+  cursor: pointer;
+  color: #1a73e8;
+  transition: color 0.2s;
+}
+
+.time-field mat-icon:hover {
+  color: #1557b0;
+}
+
+mat-checkbox {
+  margin: 8px 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button[type="submit"] {
+  background-color: #1a73e8;
+  color: white;
+  flex: 1;
+}
+
+button[type="submit"]:hover {
+  background-color: #1557b0;
+}
+
+button[type="button"] {
+  color: #5f6368;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0,0,0,0.12);
+}
+
+::ng-deep .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+  color: rgba(0,0,0,0.24);
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-outline {
+  color: #1a73e8;
+}
+
+::ng-deep .mat-datepicker-content {
+  background-color: white;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+::ng-deep .mat-calendar-body-selected {
+  background-color: #1a73e8;
+}
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: #1a73e8;
+}
+
+::ng-deep .timepicker-overlay {
+  z-index: 1000;
+}
+
+::ng-deep .timepicker-backdrop-overlay {
+  z-index: 999;
+}
+
+::ng-deep .timepicker {
+  background-color: white !important;
+}
+
+::ng-deep .timepicker__header {
+  background-color: #1a73e8 !important;
+}
+
+::ng-deep .clock-face__clock-hand {
+  background-color: #1a73e8 !important;
+}
+
+::ng-deep .clock-face__clock-hand::after {
+  background-color: #1a73e8 !important;
+}
+
+::ng-deep .clock-face__clock-hand::before {
+  border-color: #1a73e8 !important;
+}
+
+::ng-deep .timepicker-button {
+  color: #1a73e8 !important;
+}
+
+::ng-deep .timepicker-dial__control {
+  outline: none !important;
+}
+
+::ng-deep .timepicker-dial__item--selected {
+  color: #1a73e8 !important;
+}
+
+@media (max-width: 600px) {
+  mat-card {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  mat-card-header {
+    border-radius: 0;
+  }
+
+  .datetime-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .date-field, .time-field {
+    flex: 1;
+  } 
+}
+
+/* Estilo do backdrop e calendário */
+::ng-deep .cdk-overlay-container {
+  z-index: 1000;
+}
+
+::ng-deep .cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+}
+
+::ng-deep .mat-datepicker-content {
+  background-color: white !important;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 
+              0 4px 5px 0 rgba(0,0,0,.14), 
+              0 1px 10px 0 rgba(0,0,0,.12) !important;
+}
+
+::ng-deep .mat-calendar {
+  background-color: white !important;
+}
+
+.notification-container {
+  margin: 0px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.notification-container mat-form-field {
+  max-width: 200px;
+}
+
+

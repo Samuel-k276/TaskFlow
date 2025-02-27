@@ -1,0 +1,60 @@
+<div class="task-list-container">
+  <mat-tab-group [(selectedIndex)]="selectedTab" mat-align-tabs="center">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">done_all</mat-icon>
+        Completed ({{completedTasks.length}})
+      </ng-template>
+      
+      <div class="tasks-container">
+        <app-task-card
+          *ngFor="let task of completedTasks"
+          [task]="task"
+          (taskCompleted)="onTaskCompleted($event)"
+          (taskDeleted)="onTaskDeleted()">
+        </app-task-card>
+        <div *ngIf="completedTasks.length === 0" class="no-tasks">
+          No completed tasks
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">pending</mat-icon>
+        In Progress ({{inProgressTasks.length}})
+      </ng-template>
+      
+      <div class="tasks-container">
+        <app-task-card
+          *ngFor="let task of inProgressTasks"
+          [task]="task"
+          (taskCompleted)="onTaskCompleted($event)"
+          (taskDeleted)="onTaskDeleted()">
+        </app-task-card>
+        <div *ngIf="inProgressTasks.length === 0" class="no-tasks">
+          No tasks in progress
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">warning</mat-icon>
+        Overdue ({{overdueTasks.length}})
+      </ng-template>
+      
+      <div class="tasks-container">
+        <app-task-card
+          *ngFor="let task of overdueTasks"
+          [task]="task"
+          (taskCompleted)="onTaskCompleted($event)"
+          (taskDeleted)="onTaskDeleted()">
+        </app-task-card>
+        <div *ngIf="overdueTasks.length === 0" class="no-tasks">
+          No overdue tasks
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div> 

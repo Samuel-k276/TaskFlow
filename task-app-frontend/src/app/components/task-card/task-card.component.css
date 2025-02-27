@@ -1,0 +1,81 @@
+.task-card {
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  border-left: 4px solid #1a73e8;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+  cursor: pointer;
+}
+
+.task-card:hover {
+  box-shadow: 0 6px 12px rgba(26, 115, 232, 0.1);
+  transform: translateY(-2px);
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+h3 {
+  margin: 0;
+  flex: 1;
+  color: #202124;
+  font-weight: 500;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #5f6368;
+}
+
+.description {
+  margin: 8px 0;
+  color: #5f6368;
+  padding-left: 40px;
+}
+
+.due-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1a73e8;
+  font-size: 14px;
+  margin: 8px 0 0;
+  padding-left: 40px;
+  font-weight: 500;
+}
+
+mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: #1a73e8;
+}
+
+/* Cores diferentes para cada estado */
+:host-context(.overdue) .task-card {
+  border-left-color: #d93025;
+}
+
+:host-context(.completed) .task-card {
+  border-left-color: #34a853;
+}
+
+:host-context(.in-progress) .task-card {
+  border-left-color: #1a73e8;
+}
+
+.task-header button {
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.task-header:hover button {
+  opacity: 1;
+}
+
+.task-header button:hover {
+  transform: scale(1.1);
+} 
