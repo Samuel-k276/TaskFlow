@@ -13,7 +13,6 @@ TaskFlow is a comprehensive task management system that helps you organize and t
 - **Task Categorization**: View tasks by status (Completed, In Progress, Overdue)
 - **Due Date Tracking**: Set due dates and times for tasks
 - **Notifications**: Get notified before task deadlines
-- **Responsive Design**: Works on desktop and mobile devices
 
 ## Tech Stack
 
@@ -47,8 +46,8 @@ TaskFlow is a comprehensive task management system that helps you organize and t
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/taskflow.git
-cd taskflow
+git clone https://github.com/Samuel-k276/TaskFlow.git
+cd TaskFlow
 ```
 
 2. Start the application with Docker Compose:
@@ -81,7 +80,7 @@ FRONTEND_URL=http://localhost:4200
 
 3. Build and run with Maven:
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 ### Frontend
@@ -97,7 +96,7 @@ npm install
 
 3. Run the development server:
 ```bash
-npm start
+npm run start
 ```
 
 ## API Endpoints
