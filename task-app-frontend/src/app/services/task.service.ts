@@ -6,7 +6,7 @@ import { Observable, tap, catchError, throwError } from 'rxjs';
    providedIn: 'root'
 })
 export class TaskService {
-   private apiUrl = 'https://taskflow-backend-xg1b.onrender.com/api/tasks';
+   private apiUrl = 'http://localhost:8080/api/tasks';
 
    constructor(private http: HttpClient) { }
 
