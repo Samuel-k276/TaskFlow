@@ -2,7 +2,6 @@ package taskapp.config;
 
 import taskapp.security.JwtAuthenticationFilter;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +17,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Arrays;
 
@@ -27,6 +27,9 @@ import java.util.Arrays;
 public class SecurityConfig {
 
    private final JwtAuthenticationFilter jwtAuthFilter;
+   
+   @Value("${FRONTEND_URL}")
+   private String frontendUrl;
    
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -50,7 +53,6 @@ public class SecurityConfig {
 
    @Bean
    public CorsConfigurationSource corsConfigurationSource() {
-      String frontendUrl = Dotenv.configure().load().get("FRONTEND_URL");
       System.out.println("Configurando CORS para permitir origem: " + frontendUrl);
       
       CorsConfiguration configuration = new CorsConfiguration();
