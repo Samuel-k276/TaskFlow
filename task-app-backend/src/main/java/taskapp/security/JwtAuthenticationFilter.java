@@ -1,4 +1,4 @@
-package com.example.taskapp.security;
+package taskapp.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

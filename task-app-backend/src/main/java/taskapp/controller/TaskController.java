@@ -1,7 +1,8 @@
-package com.example.taskapp.controller;
+package taskapp.controller;
 
-import com.example.taskapp.dto.TaskDTO;
-import com.example.taskapp.service.TaskService;
+import taskapp.dto.TaskDTO;
+import taskapp.service.TaskService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

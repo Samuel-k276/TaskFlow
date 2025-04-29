@@ -1,19 +1,21 @@
-package com.example.taskapp.service;
+package taskapp.service;
 
-import com.example.taskapp.dto.AuthenticationRequest;
-import com.example.taskapp.dto.AuthenticationResponse;
-import com.example.taskapp.dto.RegisterRequest;
-import com.example.taskapp.entity.User;
-import com.example.taskapp.repository.UserRepository;
-import com.example.taskapp.security.JwtService;
+import taskapp.dto.AuthenticationRequest;
+import taskapp.dto.AuthenticationResponse;
+import taskapp.dto.RegisterRequest;
+import taskapp.entity.User;
+import taskapp.exception.AuthenticationException;
+import taskapp.repository.UserRepository;
+import taskapp.security.JwtService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
+
 import java.util.Optional;
-import com.example.taskapp.exception.AuthenticationException;
 
 @Service
 @RequiredArgsConstructor

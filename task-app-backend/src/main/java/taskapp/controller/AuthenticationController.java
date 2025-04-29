@@ -1,9 +1,11 @@
-package com.example.taskapp.controller;
+package taskapp.controller;
 
-import com.example.taskapp.dto.AuthenticationRequest;
-import com.example.taskapp.dto.AuthenticationResponse;
-import com.example.taskapp.dto.RegisterRequest;
-import com.example.taskapp.service.AuthenticationService;
+import taskapp.dto.AuthenticationRequest;
+import taskapp.dto.AuthenticationResponse;
+import taskapp.dto.RegisterRequest;
+import taskapp.exception.AuthenticationException;
+import taskapp.service.AuthenticationService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.taskapp.exception.AuthenticationException;
 
 import java.util.HashMap;
 import java.util.Map;

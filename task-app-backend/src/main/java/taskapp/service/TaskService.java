@@ -1,10 +1,11 @@
-package com.example.taskapp.service;
+package taskapp.service;
 
-import com.example.taskapp.dto.TaskDTO;
-import com.example.taskapp.entity.Task;
-import com.example.taskapp.entity.User;
-import com.example.taskapp.repository.TaskRepository;
-import com.example.taskapp.repository.UserRepository;
+import taskapp.dto.TaskDTO;
+import taskapp.entity.Task;
+import taskapp.entity.User;
+import taskapp.repository.TaskRepository;
+import taskapp.repository.UserRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;

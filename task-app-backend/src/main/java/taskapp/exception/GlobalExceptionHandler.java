@@ -1,4 +1,4 @@
-package com.example.taskapp.exception;
+package taskapp.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

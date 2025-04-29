@@ -1,7 +1,8 @@
-package com.example.taskapp.security;
+package taskapp.security;
 
-import com.example.taskapp.entity.User;
-import com.example.taskapp.repository.UserRepository;
+import taskapp.entity.User;
+import taskapp.repository.UserRepository;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

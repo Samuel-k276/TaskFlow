@@ -1,4 +1,4 @@
-package com.example.taskapp.security;
+package taskapp.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

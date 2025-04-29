@@ -1,4 +1,4 @@
-package com.example.taskapp.exception;
+package taskapp.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

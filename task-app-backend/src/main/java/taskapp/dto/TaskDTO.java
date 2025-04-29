@@ -1,4 +1,4 @@
-package com.example.taskapp.dto;
+package taskapp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

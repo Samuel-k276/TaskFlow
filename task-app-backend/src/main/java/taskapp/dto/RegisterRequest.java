@@ -1,4 +1,4 @@
-package com.example.taskapp.dto;
+package taskapp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
-   private String token;
+public class RegisterRequest {
+   private String username;
+   private String email;
+   private String password;
 } 
