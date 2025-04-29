@@ -2,6 +2,7 @@ package taskapp.config;
 
 import taskapp.security.JwtAuthenticationFilter;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,7 @@ import java.util.Arrays;
 public class SecurityConfig {
 
    private final JwtAuthenticationFilter jwtAuthFilter;
-
+   
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
       http
@@ -49,13 +50,16 @@ public class SecurityConfig {
 
    @Bean
    public CorsConfigurationSource corsConfigurationSource() {
+      String frontendUrl = Dotenv.configure().load().get("FRONTEND_URL");
+      System.out.println("Configurando CORS para permitir origem: " + frontendUrl);
+      
       CorsConfiguration configuration = new CorsConfiguration();
-      configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200")); // Angular default port
+      configuration.setAllowedOrigins(Arrays.asList(frontendUrl));
       configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
       configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With", "Accept", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"));
       configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
       configuration.setAllowCredentials(true);
-      configuration.setMaxAge(3600L); // 1 hora em segundos
+      configuration.setMaxAge(3600L);
 
       UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
       source.registerCorsConfiguration("/**", configuration);

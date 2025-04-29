@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap, catchError, throwError } from 'rxjs';
+import { environment } from '../config/environment';
 
 @Injectable({
    providedIn: 'root'
 })
 export class TaskService {
-   private apiUrl = 'http://localhost:8080/api/tasks';
+   private apiUrl = `${environment.apiUrl}/tasks`;
 
    constructor(private http: HttpClient) { }
 
@@ -37,4 +38,4 @@ export class TaskService {
    deleteTask(id: number): Observable<void> {
       return this.http.delete<void>(`${this.apiUrl}/${id}`);
    }
-} 
+}
