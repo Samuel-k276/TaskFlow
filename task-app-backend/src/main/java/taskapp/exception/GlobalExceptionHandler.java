@@ -19,10 +19,10 @@ public class GlobalExceptionHandler {
         Map<String, String> response = new HashMap<>();
         response.put("message", e.getMessage());
         response.put("error", "AUTHENTICATION_ERROR");
-        response.put("status", "403");
+        response.put("status", "400");
         response.put("type", e.getMessage());
         
         log.debug("Sending error response: {}", response);
-        return ResponseEntity.status(403).body(response);
+        return ResponseEntity.status(400).body(response);
     }
-} 
+}

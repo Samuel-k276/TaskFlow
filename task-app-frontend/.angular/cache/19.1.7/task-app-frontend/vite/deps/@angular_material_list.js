@@ -1,9 +1,9 @@
 import {
-  SelectionModel
-} from "./chunk-JPLIQLQV.js";
-import {
   MatDividerModule
 } from "./chunk-TQMOM7HV.js";
+import {
+  SelectionModel
+} from "./chunk-JPLIQLQV.js";
 import {
   NG_VALUE_ACCESSOR
 } from "./chunk-CTVX5IZ6.js";
@@ -89,10 +89,10 @@ import {
   ɵɵtemplateRefExtractor,
   ɵɵviewQuery
 } from "./chunk-PI4GD2TL.js";
-import "./chunk-WSXI74FV.js";
 import {
   merge
 } from "./chunk-LBBSG2YE.js";
+import "./chunk-WSXI74FV.js";
 import {
   Subject,
   Subscription,

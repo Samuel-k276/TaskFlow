@@ -1,5 +1,6 @@
 package taskapp.security;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -12,11 +13,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import java.nio.charset.StandardCharsets;
 
 @Service
 public class JwtService {
-   private static final String SECRET_KEY = System.getProperty("JWT_SECRET");
-   private static final long EXPIRATION_TIME = Long.parseLong(System.getProperty("JWT_EXPIRATION", "86400000"));
+   // Carrega diretamente do arquivo .env usando a biblioteca dotenv-java
+   private final static String SECRET_KEY = Dotenv.configure().load().get("JWT_SECRET");
+   private final static long EXPIRATION_TIME = Long.parseLong(Dotenv.configure().load().get("JWT_EXPIRATION"));
 
    public String extractUsername(String token) {
       return extractClaim(token, Claims::getSubject);
@@ -63,8 +66,7 @@ public class JwtService {
    }
 
    private Key getSigningKey() {
-      // O SECRET_KEY agora vem da variável de ambiente
-      byte[] keyBytes = java.util.Base64.getDecoder().decode(SECRET_KEY);
-      return Keys.hmacShaKeyFor(keyBytes);
+      // Usar a string diretamente como bytes em vez de tentar decodificar de Base64
+      return Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
    }
 }

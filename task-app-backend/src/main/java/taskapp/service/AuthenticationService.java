@@ -26,26 +26,33 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
-        // Verifica username
+        // Verifica username - antes de tentar salvar
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new AuthenticationException("USERNAME_EXISTS");
         }
         
-        // Verifica email
+        // Verifica email - antes de tentar salvar
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new AuthenticationException("EMAIL_EXISTS");
         }
         
-        var user = User.builder()
-                .username(request.getUsername())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .build();
-        userRepository.save(user);
-        var jwtToken = jwtService.generateToken(user);
-        return AuthenticationResponse.builder()
-                .token(jwtToken)
-                .build();
+        try {
+            var user = User.builder()
+                    .username(request.getUsername())
+                    .email(request.getEmail())
+                    .password(passwordEncoder.encode(request.getPassword()))
+                    .build();
+            userRepository.save(user);
+            var jwtToken = jwtService.generateToken(user);
+            return AuthenticationResponse.builder()
+                    .token(jwtToken)
+                    .build();
+        } catch (Exception e) {
+            // Log da exceção para diagnóstico
+            System.err.println("Erro ao registrar usuário: " + e.getMessage());
+            e.printStackTrace();
+            throw new AuthenticationException("REGISTRATION_FAILED");
+        }
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -75,4 +82,4 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
-} 
+}

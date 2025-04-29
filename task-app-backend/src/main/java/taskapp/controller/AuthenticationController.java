@@ -27,11 +27,12 @@ public class AuthenticationController {
    @PostMapping("/register")
    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
       try {
-         return ResponseEntity.ok(authenticationService.register(request));
+         AuthenticationResponse response = authenticationService.register(request);
+         return ResponseEntity.ok(response);
       } catch (AuthenticationException e) {
          Map<String, String> errorResponse = new HashMap<>();
          errorResponse.put("error", e.getMessage());
-         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
+         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
       }
    }
 
@@ -39,4 +40,4 @@ public class AuthenticationController {
    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
       return ResponseEntity.ok(authenticationService.authenticate(request));
    }
-} 
+}
